@@ -1,0 +1,63 @@
+{
+  "algorithm": "SAC",
+  "algorithm_kwargs": {
+    "batch_size": 128,
+    "eval_max_path_length": 5,
+    "expl_max_path_length": 5,
+    "min_num_steps_before_training": 33,
+    "num_epochs": 1000,
+    "num_eval_steps_per_epoch": 25,
+    "num_expl_steps_per_train_loop": 25,
+    "num_trains_per_train_loop": 1000
+  },
+  "eval_environment_kwargs": {
+    "action_space_name": "hori_move",
+    "control_freq": 20,
+    "controller": "OSC_POSITION",
+    "env_name": "StraightenRope",
+    "hard_reset": false,
+    "horizon": 1200,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": [
+      "Panda"
+    ]
+  },
+  "expl_environment_kwargs": {
+    "action_space_name": "hori_move",
+    "control_freq": 20,
+    "controller": "OSC_POSITION",
+    "env_name": "StraightenRope",
+    "hard_reset": false,
+    "horizon": 1200,
+    "ignore_done": true,
+    "reward_scale": 1.0,
+    "robots": [
+      "Panda"
+    ]
+  },
+  "policy_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "qf_kwargs": {
+    "hidden_sizes": [
+      256,
+      256
+    ]
+  },
+  "replay_buffer_size": 1000000,
+  "seed": 59,
+  "trainer_kwargs": {
+    "discount": 0.99,
+    "policy_lr": 0.001,
+    "qf_lr": 0.0005,
+    "reward_scale": 1.0,
+    "soft_target_tau": 0.005,
+    "target_update_period": 5,
+    "use_automatic_entropy_tuning": true
+  },
+  "version": "normal"
+}
